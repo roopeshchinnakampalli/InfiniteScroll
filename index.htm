@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <style>
+        html {
+            margin:0px;
+            padding:0px;
+        }
+        #container {
+            height: 300px;
+            width:100%;
+            overflow: scroll;
+            border: 1px solid #000;
+            -webkit-overflow-scrolling:touch;
+        }
+        
+        ul {
+            width: 100%;
+            padding:0px;
+            margin: 0px;
+        }
+        
+        ul li {
+            height: 30px;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    <script src="InfiniteScroll.js"></script>
+    <div id="container">
+        <ul>
+            
+        </ul>
+
+    </div>
+   
+    <script>
+        (function(){
+            //Test data setup
+            var listItem = null,
+                i = 0,
+                stack = [];
+
+            for (i = 0; i < 500; i++) {
+                listItem = document.createElement('li');
+                listItem.innerHTML = "Item " + i;
+                stack.push(listItem);
+            }
+
+            //Initialize the InfiniteScroll
+            var infiScroll = new InfiniteScroll({
+                wrapper:'container',/*Manadatory*/
+                itemsCollection:stack, /*Array holds the li items*/
+                chunkItems:null /*optional*/
+            });
+            
+            infiScroll.init();
+            
+            //Hold the instance for future operation - e.g., destroy!
+            window.InifinitScrollInstance = infiScroll;
+           
+        
+        }());
+                
+    </script>
+
+</body>
+
+</html>
