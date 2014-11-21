@@ -10,7 +10,7 @@ App will crash incase if the same scenario happens in Hybrid Mobile Application 
 
 So, in this scenario, InifiteScroll will be handy!
 
-What InifiteScroll is doing?
+What InfiniteScroll is doing inside?
 =============================
 It chunks the list items and display each chuck at a time based on the scroll position.
 
@@ -24,14 +24,20 @@ We are using DOMFragments to append the items to the list, so, DOM access will b
 
 Usage
 ===============
-Initialize the InfiniteScroll
+
 var infiScroll = new InfiniteScroll({
+
     wrapper:'container',    /*Manadatory : Parent element of the list, where the list is nested */
+    
     itemsCollection:stack,  /*Mandatory: Array holds the li items */
+    
     chunkItems:null         /*optional : function reference to chunk the items */
+    
 });
 
+
 infiScroll.init();
+
 
 What's Next
 ================
@@ -39,7 +45,7 @@ What's Next
 2. Integration with BackboneJS framework etc.,
 3. NodeJS compatability
 
-Connecy with me
+Connect with me
 =================
 Feel free to bug me incase of any issues!
 
