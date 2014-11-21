@@ -54,9 +54,9 @@
 
             //Initialize the InfiniteScroll
             var infiScroll = new InfiniteScroll({
-                wrapper:'container',/*Manadatory*/
-                itemsCollection:stack, /*Array holds the li items*/
-                chunkItems:null /*optional*/
+                wrapper:'container',/*Manadatory : Parent element of the list, where the list is nested */
+                itemsCollection:stack, /*Mandatory: Array holds the li items*/
+                chunkItems:null /*optional : function reference to chunk the items*/
             });
             
             infiScroll.init();

@@ -5,6 +5,11 @@
 function InfiniteScroll(options) {
     "use strict";
     
+    //Scope safe constructor
+    if (!(this instanceof InfiniteScroll)) {
+        return new InfiniteScroll(options);
+    }
+    
     var position = 0,
         prevPosition = 0,
         index = -1,
@@ -17,8 +22,8 @@ function InfiniteScroll(options) {
             
             items = (options.chunkItems) ? (options.chunkItems)() : chunk();
             
-            if (items.length <= 0) {
-                throw new Error("No items!");
+            if (items.length <= 0 || options.wrapper.trim().length <= 0) {
+                throw new Error("No items or root element is not set!");
             }
         
             document.getElementById(options.wrapper).addEventListener("scroll", function () {
@@ -125,11 +130,7 @@ function InfiniteScroll(options) {
         };
     
     return {
-        init : function () {
-            setup();
-        },
-        destroy: function () {
-            destroy();
-        }
+        init : setup,
+        destroy: destroy
     };
 }
