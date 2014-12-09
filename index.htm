@@ -4,29 +4,33 @@
 <head>
     <meta charset="utf-8" />
     <style>
-        html {
-            margin:0px;
-            padding:0px;
+        html,body {
+            margin: 0px;
+            padding: 0px;
         }
         #container {
-            height: 300px;
-            width:100%;
-            overflow: scroll;
-            border: 1px solid #000;
-            -webkit-overflow-scrolling:touch;
-        }
-        
-        ul {
+            height:100vh;
+            margin:0px;
             width: 100%;
-            padding:0px;
-            margin: 0px;
+            overflow: scroll;
+            -webkit-overflow-scrolling: touch;
         }
-        
-        ul li {
-            height: 30px;
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            text-align: left;
         }
-        
-        
+        li {
+            padding: 0 10px;
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #ccc;
+            border-top: 1px solid #fff;
+            background-color: #fafafa;
+            font-size: 14px;
+        }
     </style>
 </head>
 
@@ -34,13 +38,13 @@
     <script src="InfiniteScroll.js"></script>
     <div id="container">
         <ul>
-            
+
         </ul>
 
     </div>
-   
+
     <script>
-        (function(){
+        (function () {
             //Test data setup
             var listItem = null,
                 i = 0,
@@ -54,19 +58,21 @@
 
             //Initialize the InfiniteScroll
             var infiScroll = new InfiniteScroll({
-                wrapper:'container',/*Manadatory : Parent element of the list, where the list is nested */
-                itemsCollection:stack, /*Mandatory: Array holds the li items*/
-                chunkItems:null /*optional : function reference to chunk the items*/
+                wrapper: 'container',
+                /*Manadatory : Parent element of the list, where the list is nested */
+                itemsCollection: stack,
+                /*Mandatory: Array holds the li items*/
+                chunkItems: null /*optional : function reference to chunk the items*/
             });
-            
+
             infiScroll.init();
-            
+
             //Hold the instance for future operation - e.g., destroy!
             window.InifinitScrollInstance = infiScroll;
-           
-        
+
+
         }());
-                
+        
     </script>
 
 </body>

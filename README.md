@@ -14,8 +14,8 @@ What InfiniteScroll is doing inside?
 =============================
 It chunks the list items and display each chuck at a time based on the scroll position.
 
-Scroll Up: We remove elements from the top and add elements down in the list
-Scroll Down: Viceversa operation of Scroll Up
+Scroll Up: We remove elements from the top and add elements down in the list.
+Scroll Down: Viceversa operation of Scroll Up.
 
 With this at any point of time, we have fixed number of DOM elements is available in the browser inside the list.
 
