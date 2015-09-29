@@ -1,0 +1,9 @@
+{
+  "name": "InifiniteScroll",
+  "version": "1.0.0",
+  "dependencies": {},
+    "engines": {
+    "node": ">=0.10.0"
+    }
+  
+}

@@ -36,7 +36,7 @@
 
 <body>
     <script src="InfiniteScroll.js"></script>
-    <div id="container">
+    <div id="container"style="transform:translate3d(x,0,0)" >
         <ul>
 
         </ul>
@@ -50,12 +50,12 @@
                 i = 0,
                 stack = [];
 
-            for (i = 0; i < 500; i++) {
+            for (i = 0; i < 10000; i++) {
                 listItem = document.createElement('li');
-                listItem.innerHTML = "Item " + i;
+                listItem.innerText = "Item " + i;
                 stack.push(listItem);
             }
-
+           
             //Initialize the InfiniteScroll
             var infiScroll = new InfiniteScroll({
                 wrapper: 'container',
@@ -66,12 +66,13 @@
             });
 
             infiScroll.init();
-
+            
             //Hold the instance for future operation - e.g., destroy!
             window.InifinitScrollInstance = infiScroll;
 
-
         }());
+        
+        
         
     </script>
 
